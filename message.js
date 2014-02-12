@@ -7,6 +7,7 @@ chrome.extension.sendMessage({action: "get_status"}, function(response) {
   else {
       $('#stop').css('background-image', 'url(pause2.png)');
       $('#play').css('background-image', 'url(play.png)');
+      $('#info').html('');
   }
 });
 $('#start').click(function(){
