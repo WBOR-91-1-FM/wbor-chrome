@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <title>WBOR</title>
+    <script src=jquery.min.js></script>
+    <style>
+        .spinner {
+            position: relative;
+            width: 30px;
+            background-color: #333;
+            color:#fff;
+            font-weight:bold;
+            text-align:center;
+            height:30px;
+            line-height: 30px;
+            margin-left: 50px;
+            margin-bottom: 5px;
+            -webkit-animation: rotateplane 0.7s infinite ease-in-out;
+            animation: rotateplane 0.7s infinite ease-in-out;
+        }
+        @-webkit-keyframes rotateplane {
+            0% { -webkit-transform: perspective(120px) }
+            50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+            100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+        }
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            } 50% {
+                  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+              } 100% {
+                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                }
+        }
+        body {
+            background-color: #007FFF;
+            font-family: sans-serif;
+            margin-bottom: 0px;
+        }
+        small {
+            background-color:#fff;
+            padding:5px 0;
+        }
+        a {
+            cursor:pointer;
+            text-decoration:none;
+            color:#007FFF
+        }
+        #wrapper {
+            width:261px;
+            background-color:#fff;
+            padding-top:5px;
+            margin-left: -8px;
+            margin-right: -8px;
+            margin-bottom: -8px;
+        }
+        #start, #stop {
+            height: 50px;
+            width: 50px;
+            border: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #FFF;
+            background-image: url(pause.png);
+        }
+        #start {
+            background-image: url(play.png);
+        }
+        #info {
+            display: inline-block;
+            overflow: hidden;
+            padding-bottom: 5px;
+            width: 150px;
+        }
+        #artist,#song {
+            max-height: 25px;
+            overflow: hidden;
+            width: 150px;
+            text-overflow: ellipsis;
+            margin: 0;
+            white-space: nowrap; 
+        }
+        #song {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <a href=http://wbor.org><img src=logo.png></a>
+    <div id=wrapper>
+        <button id=start></button>
+        <button id=stop></button>
+        <div id=info></div>
+    </div>
+    <script src=message.js></script>
+</body>
+</html>
