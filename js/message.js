@@ -16,20 +16,24 @@ chrome.extension.sendMessage({action: "get_status"}, function(response) {
 		}
 });
 $('#start').click(function(){
-    chrome.extension.sendMessage({action: "play"});
-    $('#start').addClass('active');
-    $('#stop').removeClass('active');
-		$('#record').addClass('play');
-    NP = true;
-    nowPlaying();
+		if(!NP) {
+				chrome.extension.sendMessage({action: "play"});
+				$('#start').addClass('active');
+				$('#stop').removeClass('active');
+				$('#record').addClass('play');
+				NP = true;
+				nowPlaying();
+		}
 });
 $('#stop').click(function(){
-    chrome.extension.sendMessage({action: "stop"});
-    $('#start').removeClass('active');
-    $('#stop').addClass('active');
-		$('#record').removeClass('play');
-    $('#info').html('');
-    NP = false;
+    if(NP) {
+				chrome.extension.sendMessage({action: "stop"});
+				$('#start').removeClass('active');
+				$('#stop').addClass('active');
+				$('#record').removeClass('play');
+				$('#info').html('');
+				NP = false;
+		}
 });
 function nowPlaying() {
     $('#info').html('<div class=spinner>B</div>');
