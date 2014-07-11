@@ -1,29 +1,33 @@
 var NP = false;
 chrome.extension.sendMessage({action: "get_status"}, function(response) {
-  if(response.status) {
-      $('#start').css('background-image', 'url(play2.png)');
-      $('#stop').css('background-image', 'url(pause.png)');
-      NP = true;
-      nowPlaying();
-  }
-  else {
-      $('#stop').css('background-image', 'url(pause2.png)');
-      $('#play').css('background-image', 'url(play.png)');
-      $('#info').html('');
-      NP = false;
-  }
+		if(response.status) {
+				$('#start').addClass('active');
+				$('#stop').removeClass('active');
+				$('#record').addClass('play');
+				NP = true;
+				nowPlaying();
+		}
+		else {
+				$('#start').removeClass('active');
+				$('#stop').addClass('active');
+				$('#record').removeClass('play');
+				$('#info').html('');
+				NP = false;
+		}
 });
 $('#start').click(function(){
     chrome.extension.sendMessage({action: "play"});
-    $('#start').css('background-image', 'url(play2.png)');
-    $('#stop').css('background-image', 'url(pause.png)');
+    $('#start').addClass('active');
+    $('#stop').removeClass('active');
+		$('#record').addClass('play');
     NP = true;
     nowPlaying();
 });
 $('#stop').click(function(){
     chrome.extension.sendMessage({action: "stop"});
-    $('#start').css('background-image', 'url(play.png)');
-    $('#stop').css('background-image', 'url(pause2.png)');
+    $('#start').removeClass('active');
+    $('#stop').addClass('active');
+		$('#record').removeClass('play');
     $('#info').html('');
     NP = false;
 });
