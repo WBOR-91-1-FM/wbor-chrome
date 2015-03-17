@@ -3,7 +3,7 @@
 
     "name": "WBOR Brunswick 91.1FM",
     "description": "This extension allows you to stream music from WBOR Brunswick 91.1FM, providing commercial-free radio since 1951.",
-    "version": "3.0.1",
+    "version": "3.0.2",
 
     "permissions": [
         "http://139.140.232.18:8080/",
