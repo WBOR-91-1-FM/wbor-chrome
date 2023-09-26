@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
 
-    "name": "WBOR Brunswick 91.1FM",
-    "description": "This extension allows you to stream music from WBOR Brunswick 91.1FM, providing commercial-free radio since 1951.",
+    "name": "WBOR 91.1 FM",
+    "description": "This chrome extension allows you to stream music from WBOR 91.1 FM, Bowdoin College, providing commercial-free radio since 1941.",
     "version": "3.0.2",
 
     "permissions": [
-        "http://139.140.232.18:8080/",
+        "https://listen.wbor.org:8000/stream",
         "http://www.wbor.org/updateinfo",
         "background"
     ],
