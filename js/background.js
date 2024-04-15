@@ -8,7 +8,7 @@ audio.autobuffer = true;
 
 var source = document.createElement('source');
 source.type = "audio/mpeg";
-source.src = "https://listen.wbor.org:8000/stream";
+source.src = "https://listen.wbor.org/stream";
 audio.appendChild(source);
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {

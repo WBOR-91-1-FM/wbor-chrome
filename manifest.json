@@ -6,9 +6,7 @@
 	"version": "3.1.0",
 
 	"permissions": [
-		"https://listen.wbor.org:8000/stream",
-		"http://www.wbor.org/updateinfo",
-		"background"
+		"https://listen.wbor.org/stream"
 	],
 	"background": {
 		"scripts": ["/js/background.js"]
