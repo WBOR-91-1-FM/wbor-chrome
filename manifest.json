@@ -6,7 +6,7 @@
 	"version": "3.1.0",
 
 	"permissions": [
-		"https://listen.wbor.org/stream"
+		"https://listen.wbor.org/"
 	],
 	"background": {
 		"scripts": ["/js/background.js"]
